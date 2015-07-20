@@ -1,0 +1,31 @@
+{
+  "name": "pillbug",
+  "version": "0.0.1",
+  "description": "Simple static express server",
+  "main": "bin/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Urucas/pillbug.git"
+  },
+  "keywords": [
+    "server",
+    "express",
+    "static"
+  ],
+  "author": "Urucas <hello@urucas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Urucas/pillbug/issues"
+  },
+  "homepage": "https://github.com/Urucas/pillbug",
+  "dependencies": {
+    "express": "^4.13.1"
+  },
+  "devDependencies": {
+    "babel": "^5.6.23",
+    "mocha": "^2.2.5"
+  }
+}
