@@ -42,5 +42,18 @@ describe("Pillbug tests", () => {
       throw new Error("Error creating static server");
     });
   });
+
+  it("should stop the server", (done) => {
+    let pb = pillbug(8009);
+    let uri = pb.get_uri();
+    let server = pb.run();
+    setTimeout( () => {
+      pb.stop();
+      request(uri, (err, response, body) => {
+        if(err || response.statusCode == 404) done();
+        throw new Error("Server not closed correctly");
+      });
+    }, 500);
+  });
 });
 
