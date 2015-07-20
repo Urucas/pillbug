@@ -4,8 +4,12 @@
   "description": "Simple static express server",
   "main": "bin/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "make clean && make node",
+    "prestart" : "npm run build",
+    "start": "./bin/index"
   },
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/Urucas/pillbug.git"
@@ -15,6 +19,9 @@
     "express",
     "static"
   ],
+  "bin": {
+    "pillbug": "./bin/index"
+  },
   "author": "Urucas <hello@urucas.com>",
   "license": "MIT",
   "bugs": {
