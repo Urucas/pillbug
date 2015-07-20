@@ -3,10 +3,11 @@ var argv = require('minimist')(process.argv.slice(2));
 if(argv.help) {
   console.log([
     'pillbug, a simple static express server',
-    'Usage: pillbug localhost:[port]'
+    'Usage: pillbug [port]'
   ].join('\n'));
   return;
 }
+var port = argv["_"][0] || (process.env.PORT || 5000);
 var server = require('../node')(argv.port);
 server.run();
 server.open();
