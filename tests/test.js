@@ -31,29 +31,24 @@ describe("Pillbug tests", () => {
     done(); 
   });
 
-  it("should create a server", (done) => {
+  it("should create a server and stop it", (done) => {
     let pb = pillbug(8009);
     let uri = pb.get_uri();
     let server = pb.run();
     request.get(uri, (err, response, body) => {
-      pb.stop();
       if(err) throw err;
-      if(response.statusCode == 200) done();
-      throw new Error("Error creating static server");
-    });
-  });
-
-  it("should stop the server", (done) => {
-    let pb = pillbug(8009);
-    let uri = pb.get_uri();
-    let server = pb.run();
-    setTimeout( () => {
+      if(response.statusCode != 200)
+        throw new Error("Error creating static server");
+      
       pb.stop();
-      request(uri, (err, response, body) => {
-        if(err || response.statusCode == 404) done();
-        throw new Error("Server not closed correctly");
-      });
-    }, 500);
+      setTimeout( () => {
+        request(uri, (err, response, body) => {
+          if(err || response.statusCode == 404) done();
+          throw new Error("Server not closed correctly");
+        });
+      }, 200);
+    });
+
   });
 });
 
