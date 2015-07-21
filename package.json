@@ -1,6 +1,6 @@
 {
   "name": "pillbug",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Simple static express server",
   "main": "bin/index",
   "scripts": {
