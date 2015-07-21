@@ -1,5 +1,5 @@
-# pillbug
-Simple static express server [![Build Status](https://travis-ci.org/Urucas/pillbug.svg)](https://travis-ci.org/Urucas/pillbug)
+# pillbug [![Build Status](https://travis-ci.org/Urucas/pillbug.svg)](https://travis-ci.org/Urucas/pillbug)
+Simple static express server 
 
 #Usage
 ```bash
