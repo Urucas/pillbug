@@ -48,7 +48,26 @@ describe("Pillbug tests", () => {
         });
       }, 200);
     });
-
   });
+  
+  it("should create a server with proxy and stop it", (done) => {
+    let pb = pillbug(8009);
+    let uri = pb.get_uri()+"/proxy";
+    let server = pb.run().create_proxy();
+    request.get(uri, (err, response, body) => {
+      if(err) throw err;
+      if(response.statusCode != 200)
+        throw new Error("Error creating static server");
+      
+      pb.stop();
+      setTimeout( () => {
+        request(uri, (err, response, body) => {
+          if(err || response.statusCode == 404) done();
+          throw new Error("Server not closed correctly");
+        });
+      }, 200);
+    });
+  });
+
 });
 
