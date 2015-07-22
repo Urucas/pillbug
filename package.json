@@ -1,6 +1,6 @@
 {
   "name": "pillbug",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple static express server",
   "main": "bin/index",
   "scripts": {
@@ -31,7 +31,8 @@
   "dependencies": {
     "express": "^4.13.1",
     "minimist": "^1.1.1",
-    "openurl": "^1.1.0"
+    "openurl": "^1.1.0",
+    "request": "^2.60.0"
   },
   "devDependencies": {
     "babel": "^5.6.23",
