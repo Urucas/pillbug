@@ -9,8 +9,9 @@ if(argv.help) {
 }
 var port = argv["_"][0] || (process.env.PORT || 5000);
 var server = require('../node')(port);
+var emoji = require('node-emoji');
 server.run();
 if(argv.proxy) server.create_proxy();
-console.log("Running server on "+server.get_uri());
+console.log("Running server on "+server.get_uri()+" "+emoji.get("beetle"));
 server.open();
 
