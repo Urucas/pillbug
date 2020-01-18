@@ -8,7 +8,8 @@ if(argv.help) {
   return;
 }
 var port = argv["_"][0] || (process.env.PORT || 5000);
-var server = require('../node')(port);
+console.log(require('../dist'))
+var server = require('../dist').default(port);
 var emoji = require('node-emoji');
 server.run();
 if(argv.proxy) server.create_proxy();
